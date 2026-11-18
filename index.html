@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOVA · Productos Premium</title>
+  <meta name="description" content="Selección de productos gourmet importados. Pedí online y coordiná por WhatsApp.">
+  <link rel="icon" href="assets/nova-truck.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="#" class="brand" aria-label="NOVA Productos Premium">
+        <img src="assets/nova-truck.png" alt="" class="brand-mark">
+        <span class="brand-tag">Productos<br>Premium</span>
+      </a>
+      <div class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Buscar producto o marca" autocomplete="off">
+      </div>
+      <button class="cart-btn" id="openCart" aria-label="Abrir carrito">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Selección importada</p>
+      <h1>Lo mejor de cada origen,<br><em>curado para tu mesa.</em></h1>
+      <p class="lead">Pastas italianas, chocolates suizos, aceites, conservas y más. Armá tu pedido y lo coordinamos por WhatsApp.</p>
+    </div>
+  </section>
+
+  <main class="wrap shop">
+    <aside class="filters" id="filters">
+      <div class="filter-block">
+        <h3>Marca</h3>
+        <div id="brandList" class="chips"></div>
+      </div>
+      <div class="filter-block">
+        <h3>Origen</h3>
+        <div id="originList" class="chips"></div>
+      </div>
+    </aside>
+
+    <section>
+      <nav class="cat-bar" id="catBar" aria-label="Categorías"></nav>
+      <div class="results-bar">
+        <span id="resultCount"></span>
+        <button id="clearFilters" class="link-btn" hidden>Limpiar filtros</button>
+      </div>
+      <div id="grid" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <img src="assets/nova-truck-white.png" alt="NOVA">
+        <span>Productos Premium</span>
+      </div>
+      <p>Pedidos por WhatsApp · Precios sujetos a confirmación</p>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Carrito" aria-hidden="true">
+    <div class="drawer-head">
+      <h2>Tu pedido</h2>
+      <button class="icon-btn" id="closeCart" aria-label="Cerrar">×</button>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot">
+      <div class="total-row"><span id="totalLabel">Total</span><strong id="cartTotal">—</strong></div>
+      <p class="fine" id="totalNote"></p>
+      <button class="btn-primary" id="checkout" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z"/></svg>
+        Pagar por WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
